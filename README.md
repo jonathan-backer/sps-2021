@@ -9,3 +9,4 @@ To get started:
 - Run the server:
   - `cd ~/sps-2021/portfolio`
   - `mvn package exec:java`
+Hello World! This is team 28. Changes to readme file.
