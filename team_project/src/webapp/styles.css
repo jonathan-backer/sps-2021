@@ -1,10 +1,48 @@
-body{
-    font-size: 16px;
-    font-family: 'Rubik';
-}
-
 .navbar{
     font-size: 20px;
     font-family: 'Rubik';
     font-weight: 500;
 }
+
+main{
+    font-size: 18px;
+    font-family: 'Rubik';
+}
+
+.project-description{
+    height: 40vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.project-description .description-image{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.project-description .description-image img{
+    width: 80%;
+}
+
+.project-description .description-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+} 
+
+.btn-start{
+    width: 50%;
+}
+
+
+.project-details{
+    height: 40vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}  
