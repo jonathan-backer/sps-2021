@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -57,9 +58,13 @@
         </nav>
     </header>
     <main>
-       <section class="header-content container">
-           <div class="row title"><div class="col"><h1>Gallery</h1></div></div>
-           <div class="row filters">
+        <section class="header-content container">
+            <div class="row title">
+                <div class="col">
+                    <h1>Gallery</h1>
+                </div>
+            </div>
+            <div class="row filters">
                 <div class=" col-4 input-group mb-3">
                     <input type="text" class="form-control" placeholder="Search product by name" aria-label="Search product by name" aria-describedby="button-addon2">
                     <div class="input-group-append">
@@ -67,87 +72,26 @@
                     </div>
                 </div>
                 <div class="col-6">
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
-                    <label class="form-check-label" for="inlineRadio1">Hardware</label>
-                  </div>
-                  <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-                    <label class="form-check-label" for="inlineRadio2">Software</label>
-                  </div>
-                  <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3" >
-                    <label class="form-check-label" for="inlineRadio3">Internet Access</label>
-                  </div> 
-               </div>
-            </div>
-       </section>
-       <section class="cards container">
-            <div class="ind-card card">
-                <div class="card-img"><img src="" alt=""></div>
-                    <div class="card-body">
-                    <p class="card-title">Used laptop</p>
-                    <hr>
-                    <div class="cont-icon">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <p class="location">Los Angeles, CA</p>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                        <label class="form-check-label" for="inlineRadio1">Hardware</label>
                     </div>
-                    <button class="btn btn-primary">View full details</button>
-               </div>
-            </div>
-
-            <div class="ind-card card">
-            <div class="card-img"><img src="" alt=""></div>
-                <div class="card-body">
-                <p class="card-title">Used laptop</p>
-                <hr>
-                <div class="cont-icon">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <p class="location">Los Angeles, CA</p>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                        <label class="form-check-label" for="inlineRadio2">Software</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
+                        <label class="form-check-label" for="inlineRadio3">Internet Access</label>
+                    </div>
                 </div>
-                <button class="btn btn-primary">View full details</button>
-           </div>
             </div>
-            <div class="ind-card card">
-        <div class="card-img"><img src="" alt=""></div>
-            <div class="card-body">
-            <p class="card-title">Used laptop</p>
-            <hr>
-            <div class="cont-icon">
-                <i class="fas fa-map-marker-alt"></i>
-                <p class="location">Los Angeles, CA</p>
-            </div>
-            <button class="btn btn-primary">View full details</button>
-       </div>
-            </div>
-
-            <div class="ind-card card">
-    <div class="card-img"><img src="" alt=""></div>
-        <div class="card-body">
-        <p class="card-title">Used laptop</p>
-        <hr>
-        <div class="cont-icon">
-            <i class="fas fa-map-marker-alt"></i>
-            <p class="location">Los Angeles, CA</p>
-        </div>
-        <button class="btn btn-primary">View full details</button>
-   </div>
-            </div>
-
-            <div class="ind-card card">
-                <div class="card-img"><img src="" alt=""></div>
-                    <div class="card-body">
-                    <p class="card-title">Used laptop</p>
-                    <hr>
-                    <div class="cont-icon">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <p class="location">Los Angeles, CA</p>
-                    </div>
-                    <button class="btn btn-primary">View full details</button>
-               </div>
-            </div>
-       </section>
+        </section>
+        <section class="cards container" id = "card-container">
+            <!-- Each card is created through Javascript file -->
+        </section>
     </main>
+    <script src="offerGallery.js"></script>
 </body>
 
 </html>
