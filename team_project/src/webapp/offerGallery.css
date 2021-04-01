@@ -1,0 +1,44 @@
+.navbar{
+    font-size: 20px;
+    font-family: 'Rubik';
+    font-weight: 500;
+}
+
+main{
+    font-size: 18px;
+    font-family: 'Rubik';
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+
+.cards{
+    width: 100%;
+    margin-top: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.ind-card{
+    width: 22%;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 20px;
+}
+
+.card-img{
+    width: 100%;
+    height: 130px;
+    background: #C4C4C4;
+}
+
+.cont-icon{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    align-items: baseline;
+}
