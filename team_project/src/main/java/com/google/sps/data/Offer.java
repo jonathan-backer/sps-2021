@@ -14,45 +14,9 @@
 
 package com.google.sps.data;
 
-enum Category {
-  HARDWARE("Hardware"),
-  SOFTWARE("Software"),
-  INTERNET_ACCESS("Internet Access");
+import com.google.sps.data.*;
 
-  private final String category;
-
-  private Category(String category) {
-    this.category = category;
-  }
-}
-
-enum Condition {
-  NA("NA"),
-  NEW("New"),
-  USED("Used");
-
-  private final String condition;
-
-  private Condition(String condition) {
-    this.condition = condition;
-  }
-}
-
-/** An item on a todo list. */
 public final class Offer {
-
-  // Offer: {
-  //   firstName: String,
-  //   lastName: String,
-  //   email: String,
-  //   offering: String,
-  //   category: Enum<String> {'Hardware', 'Software', 'Internet Access'},
-  //   description: String,
-  //   picture: String,
-  //   condition: Enum<String> {'NA', 'New', 'Used'},
-  //   location: Array<Number>,
-  //   timestamp: long,
-  // }
 
   private final long id;
   private final String firstName;
@@ -66,7 +30,7 @@ public final class Offer {
   private final String location;
   private final long timestamp;
 
-  public Task(
+  public Offer(
     long id, 
     String firstName,
     String lastName,

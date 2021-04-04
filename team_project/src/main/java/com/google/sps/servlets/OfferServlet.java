@@ -14,20 +14,29 @@
 
 package com.google.sps.servlets;
 
+import com.google.gson.Gson; 
+import com.google.gson.GsonBuilder;  
+
 import com.google.cloud.datastore.Datastore;
 import com.google.cloud.datastore.DatastoreOptions;
 import com.google.cloud.datastore.Entity;
 import com.google.cloud.datastore.FullEntity;
 import com.google.cloud.datastore.KeyFactory;
-import com.google.sps.data.Offer;
+import com.google.sps.data.*;
 
 import java.io.IOException;
+
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import org.jsoup.Jsoup;
 import org.jsoup.safety.Whitelist;
+
+import java.util.*;
+import com.google.cloud.datastore.Query;
+import com.google.cloud.datastore.QueryResults;
+import com.google.cloud.datastore.StructuredQuery.OrderBy;
 
 @WebServlet("/offer")
 public class OfferServlet extends HttpServlet {
@@ -44,10 +53,29 @@ public class OfferServlet extends HttpServlet {
       Entity entity = results.next();
 
       long id = entity.getKey().getId();
-      String title = entity.getString("title");
+      String firstName = entity.getString("firstName");
+      String lastName = entity.getString("lastName");
+      String email = entity.getString("email");
+      String offering = entity.getString("offering");
+      String category = entity.getString("category");
+      String description = entity.getString("description");
+      String picture = entity.getString("picture");
+      String condition = entity.getString("condition");
+      String location = entity.getString("location");
       long timestamp = entity.getLong("timestamp");
 
-      Offer offer = new Offer(id, title, timestamp);
+      Offer offer = new Offer(
+        id,
+        firstName,
+        lastName,
+        email,
+        offering,
+        Category.valueOf(category),
+        description,
+        picture,
+        Condition.valueOf(condition),
+        location,
+        timestamp);
       offers.add(offer);
     }
 
@@ -88,6 +116,6 @@ public class OfferServlet extends HttpServlet {
             .build();
     datastore.put(offerEntity);
 
-    response.setStatus(SC_CREATED);
+    response.setStatus(201);
   }
 }
