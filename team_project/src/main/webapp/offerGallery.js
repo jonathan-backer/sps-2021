@@ -60,6 +60,7 @@ function recaptchaCallback() {
     $('#emailBtn').removeAttr('disabled');
     $('.contact-details').removeClass('d-none');
 };
+
 //Gallery displays one card for each object in the array
 products.forEach((result) => {
     //Adds card HTML with object's unique properties
@@ -78,10 +79,10 @@ products.forEach((result) => {
 
     const modal = ` <div class="modal fade " id="exampleModal${result.id}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog modal-dialog-centered">
-                            <div class="modal-content">
+                            <div class="modal-content px-3">
                             <div class="modal-header">
                                 <h5 class="modal-title" id="exampleModalLabel">Full details</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <button type="button" class="close " data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
@@ -103,16 +104,15 @@ products.forEach((result) => {
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-12">
+                                    <div class="col-12 text-justify">
                                         <p>${result.description}</p>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-12 captcha-cont mb-3">
-                                        <form class="captcha-form" action="?" method="POST">
+                                        <form class="captcha-form${result.id}" action="?" method="POST">
+                                            <p>Complete the CAPTCHA to see the contact details</p>
                                             <div class="g-recaptcha" data-callback="recaptchaCallback" data-sitekey="6LcYS6AaAAAAAPmvDRPZsJKBO8dIwCPNrPkfumnf"></div>
-                                            <br/>
-                                            <input type="submit" value="Submit">
                                         </form>
                                     </div>
                                     <div class="contact-details col-6 d-none">
