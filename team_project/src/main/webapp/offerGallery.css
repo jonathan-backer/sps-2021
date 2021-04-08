@@ -23,7 +23,7 @@ main{
 .title span {
     font-weight: bold;
     background: linear-gradient(to right, #BF80E9 0%, #E48DDE 53%);
-    background-clip: text;
+    -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
