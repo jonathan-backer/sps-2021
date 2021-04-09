@@ -1,28 +1,37 @@
-.navbar{
+.navbar {
     font-size: 20px;
-    font-family: 'Rubik';
+    font-family: 'Montserrat';
     font-weight: 500;
 }
 
-main{
+main {
     font-size: 18px;
     font-family: 'Rubik';
 }
 
-.main-content{
+.main-content {
     margin-top: 30px;
-    height: 80vh;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
 }
 
-.title-cont{
+.title-cont {
     display: flex;
     justify-content: center;
-    
+    text-align: center;
+    margin-bottom: 50px;
 }
-.offer-instructions{
+
+.title span {
+    font-weight: bold;
+    background: linear-gradient(to right, #FC77AE 0%, #ff9085 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.offer-instructions {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -30,6 +39,6 @@ main{
     text-align: justify;
 }
 
-.submit-offer{
+.submit-offer {
     width: 100%;
 }
