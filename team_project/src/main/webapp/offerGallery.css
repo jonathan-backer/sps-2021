@@ -23,6 +23,7 @@ main{
 .title span {
     font-weight: bold;
     background: linear-gradient(to right, #BF80E9 0%, #E48DDE 53%);
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -49,6 +50,15 @@ main{
     width: 100%;
     height: 130px;
     background: #C4C4C4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.card-img img{
+    width: 50%;
+    
 }
 
 .cont-icon{
@@ -65,8 +75,14 @@ main{
     margin-left: 5px;
     height: 130px;
     background: #C4C4C4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
+.modal-img img{ 
+    width: 50%;
+}
 .category-tag{
     width: 50%;
     padding: 2px;
@@ -94,7 +110,7 @@ main{
     align-items: center;
 }
 
-.captcha-form{
+.captcha-cont form{
     display: flex;
     flex-direction: column;
     justify-content: space-around;

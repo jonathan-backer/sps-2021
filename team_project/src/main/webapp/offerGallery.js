@@ -9,7 +9,8 @@ const products = [
         category: "Hardware",
         title: "Used Laptop",
         location: "US",
-        description:"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aspernatur soluta corrupti enim ex vitae perspiciatis?"
+        description:"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aspernatur soluta corrupti enim ex vitae perspiciatis?",
+        img: "https://d22k5h68hofcrd.cloudfront.net/catalog/product/cache/b3b166914d87ce343d4dc5ec5117b502/2/9/29B19LA-1_T1601592802.png"
     },
     {
         id: "2",
@@ -19,7 +20,8 @@ const products = [
         category: "Hardware",
         title: "Samsung Smartphone",
         location: "Canada",
-        description:"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aspernatur soluta corrupti enim ex vitae perspiciatis?"
+        description:"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aspernatur soluta corrupti enim ex vitae perspiciatis?",
+        img:"https://images-na.ssl-images-amazon.com/images/I/61A3UNuWO9L._AC_SX522_.jpg"
     },
     {
         id: "3",
@@ -29,7 +31,8 @@ const products = [
         category: "Internet Access",
         title: "Wi-Fi hotspot",
         location: "Canada",
-        description:"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aspernatur soluta corrupti enim ex vitae perspiciatis?"
+        description:"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aspernatur soluta corrupti enim ex vitae perspiciatis?",
+        img: "https://images.squarespace-cdn.com/content/v1/59d2e7962994ca6597e2795c/1528574147297-NXO6UXRJ7FZKYOM9TETK/ke17ZwdGBToddI8pDm48kD5yiJ5U3jLPlFVdjq-dNjtZw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZamWLI2zvYWH8K3-s_4yszcp2ryTI0HqTOaaUohrI8PIxQ2n7XrSl_mALNyhwiiaOAqEUpH3VqkizFKNqDcghl0/960px-Wireless-icon.png"
     },
     {
         id: "4",
@@ -39,7 +42,8 @@ const products = [
         category: "Internet Access",
         title: "Wi-fi zone",
         location: "Mexico",
-        description:"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aspernatur soluta corrupti enim ex vitae perspiciatis?"
+        description:"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aspernatur soluta corrupti enim ex vitae perspiciatis?",
+        img: "https://images.squarespace-cdn.com/content/v1/59d2e7962994ca6597e2795c/1528574147297-NXO6UXRJ7FZKYOM9TETK/ke17ZwdGBToddI8pDm48kD5yiJ5U3jLPlFVdjq-dNjtZw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZamWLI2zvYWH8K3-s_4yszcp2ryTI0HqTOaaUohrI8PIxQ2n7XrSl_mALNyhwiiaOAqEUpH3VqkizFKNqDcghl0/960px-Wireless-icon.png"
     },
     {
         id: "5",
@@ -49,7 +53,8 @@ const products = [
         category: "Hardware",
         title: "Used Laptop",
         location: "Mexico",
-        description:"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aspernatur soluta corrupti enim ex vitae perspiciatis?"
+        description:"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aspernatur soluta corrupti enim ex vitae perspiciatis?",
+        img:"https://www.sanborns.com.mx/imagenes-sanborns-ii/1200/195348275705.jpg"
     },
 ];
 
@@ -65,7 +70,7 @@ function recaptchaCallback() {
 products.forEach((result) => {
     //Adds card HTML with object's unique properties
     const card = `<div class="ind-card card">
-                        <div class="card-img"><img src="" alt=""></div>
+                        <div class="card-img"><img src="${result.img}" alt=""></div>
                         <div class="card-body">
                             <p class="card-title">${result.title}</p>
                             <hr>
@@ -90,7 +95,7 @@ products.forEach((result) => {
                                 <div class="row modal-top">
                                     <div class="col-6 ">
                                         <div class="modal-img">
-                                            <img src="" alt="">
+                                            <img src="${result.img}" alt="">
                                         </div>
                                     </div>
                                     <div class="col-6 modal-basic-info">
@@ -118,7 +123,7 @@ products.forEach((result) => {
                                     <div class="contact-details col-6 d-none">
                                         <div class="cont-icon">
                                             <i class="fas fa-envelope-open-text"></i>
-                                            <p class="location">${result.email}</p>
+                                            <p><a href="mailto:${result.email}">Send email</a></p>
                                         </div>
                                         <div class="cont-icon">
                                             <i class="fas fa-phone"></i>
@@ -129,7 +134,6 @@ products.forEach((result) => {
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal" >Close</button>
-                                <button type="button" class="btn btn-primary" id="emailBtn" disabled>Contact by email</button>
                             </div>
                             </div>
                         </div>

@@ -34,6 +34,7 @@ main {
 span {
     font-weight: bold;
     background: linear-gradient(to right, #FC77AE 0%, #ff9085 100%);
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -141,6 +142,7 @@ span {
 .arrow-down i{
     font-size: 40px;
     background: linear-gradient(to right, #BF80E9 0%, #E48DDE 53%);
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     animation: bounce 2s infinite;
