@@ -4,19 +4,23 @@
     font-weight: 500;
 }
 
-main {
+main{
+    margin-top: 0 !important;
     font-size: 18px;
     font-family: 'Rubik';
+    background: #fafafa;
 }
 
 .main-content {
-    margin-top: 30px;
+    
     display: flex;
     flex-direction: column;
     justify-content: space-around;
 }
 
 .title-cont {
+    
+    font-family: 'Montserrat';
     display: flex;
     justify-content: center;
     text-align: center;
