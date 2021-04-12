@@ -1,48 +1,207 @@
-.navbar{
+.navbar {
     font-size: 20px;
-    font-family: 'Rubik';
+    font-family: 'Montserrat';
     font-weight: 500;
 }
 
-main{
+main {
     font-size: 18px;
     font-family: 'Rubik';
+    background: #fafafa;
 }
 
-.project-description{
-    height: 40vh;
+.project-description {
     display: flex;
     flex-direction: row;
     justify-content: center;
+    align-content: center;
+    height: 80vh;
 }
 
-.project-description .description-image{
+.description-title {
+    margin-bottom: 80px;
+    font-family: 'Montserrat';
+    text-align: left;
+    font-weight: 500;
+}
+
+.description-text{
+    color: #4d4d4d;
+    margin-bottom: 30px;
+    text-align: justify;
+}
+
+span {
+    font-weight: bold;
+    background: linear-gradient(to right, #FC77AE 0%, #ff9085 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.quickstart-btns {
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: space-around;
+}
+
+.btn-start1{
+    border-radius: 25px;
+    border-style: none;
+    padding: 15px 30px;
+    background: #3f447e;
+    color: #fff;
+    font-weight: bold;
+}
+
+.btn-start1:hover{
+    box-shadow:  0.2rem 0.2rem 20px #E48DDE ;
+}
+
+.btn-start2:hover{
+    box-shadow:  0.2rem 0.2rem 20px #E48DDE ;
+}
+.btn-start2{
+    border-radius: 25px;
+    border-style: none;
+    padding: 15px 30px;
+    background: #3f447e00;
+    color: #3f447e;
+    border: 3px solid #3f447e;
+    font-weight: bold;
+}
+.project-description .description-image {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
-.project-description .description-image img{
-    width: 80%;
+
+.project-description .description-image .vector-img {
+    width: 120%;
+    position: absolute;
+    z-index: 10;
+    animation-name: float;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    animation-direction: alternate;
+    animation-duration: 2s;
 }
 
-.project-description .description-content{
+.vector-img-mobile{
+    width: 30%;
+}
+
+.project-description .description-image .shadow-img {
+    width: 20%;
+    position: absolute;
+    z-index: 1;
+    animation-name: shadowGrow;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    animation-direction: alternate;
+    animation-duration: 2s;
+}
+
+.project-description .description-content {
     display: flex;
     flex-direction: column;
+    align-items: center;
     justify-content: center;
+    text-align: center;
+}
+
+
+
+.divider{
+    margin: auto;
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
     align-items: center;
     text-align: center;
-} 
+}
 
-.btn-start{
-    width: 50%;
+.line{
+    width: 35%;
+    height: 2px;
+    background: linear-gradient(to right, #BF80E9 0%, #E48DDE 53%);
+    
+}
+
+.arrow-down{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.arrow-down i{
+    font-size: 40px;
+    background: linear-gradient(to right, #BF80E9 0%, #E48DDE 53%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: bounce 2s infinite;
 }
 
 
-.project-details{
+
+.project-details {
     height: 40vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}  
+}
+
+@keyframes float {
+    0% {
+        top: 40px;
+    }
+    100% {
+        top: -10px;
+    }
+}
+
+@keyframes shadowGrow {
+    0% {
+        top: 450px;
+        scale: 1;
+    }
+    100% {
+        top: 460px;
+        scale: 4;
+    }
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+      transform: translateY(0);
+    }
+    40% {
+      transform: translateY(-30px);
+    }
+    60% {
+      transform: translateY(-15px);
+    }
+  }
+
+  @media (max-width:993px){
+    .description-title {
+        margin-bottom: 20px;
+        text-align: center;
+        font-size: 4.5vw;
+    }
+    .quickstart-btns {
+        width: 70%;
+        height: 15vh;
+        display: flex;
+        flex-direction: column;
+        align-content: space-around;
+        margin-bottom: 50px;
+    }
+  }

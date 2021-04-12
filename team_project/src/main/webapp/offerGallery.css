@@ -1,18 +1,32 @@
 .navbar{
     font-size: 20px;
-    font-family: 'Rubik';
+    font-family: 'Montserrat';
     font-weight: 500;
 }
 
+
 main{
+    margin-top: 0 !important;
     font-size: 18px;
     font-family: 'Rubik';
     margin-top: 30px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    background: #fafafa;
 }
 
+.title{
+    font-family: 'Montserrat';
+}
+
+.title span {
+    font-weight: bold;
+    background: linear-gradient(to right, #BF80E9 0%, #E48DDE 53%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
 
 .cards{
     width: 100%;
@@ -24,6 +38,7 @@ main{
 }
 
 .ind-card{
+    border-radius: 25px !important;
     width: 22%;
     margin-left: 10px;
     margin-right: 10px;
@@ -31,9 +46,19 @@ main{
 }
 
 .card-img{
+    border-radius: 25px 25px  0 0!important;
     width: 100%;
     height: 130px;
     background: #C4C4C4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.card-img img{
+    width: 50%;
+    
 }
 
 .cont-icon{
@@ -41,4 +66,77 @@ main{
     width: 100%;
     justify-content: space-around;
     align-items: baseline;
+}
+
+.modal-header .close span{
+    color: #000;
+}
+.modal-img{
+    margin-left: 5px;
+    height: 130px;
+    background: #C4C4C4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-img img{ 
+    width: 50%;
+}
+.category-tag{
+    width: 50%;
+    padding: 2px;
+    background: linear-gradient(to right, #FC77AE 0%, #ff9085 100%);
+    color: #fff;
+    border-radius: 50px;
+    font-size: 0.8em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 5%;
+}
+
+.category-tag p{
+    margin: 0;
+}
+
+.modal-content{
+    border-radius: 25px !important;
+}
+.modal-top{
+    display: flex;
+    
+    align-items: center;
+}
+
+.captcha-cont form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+@media (max-width:993px){
+    .ind-card{
+        width: 28%;
+    }
+}
+
+@media (max-width:768px){
+    .ind-card{
+        width: 40%;
+    }
+}
+
+@media (max-width:576px){
+    .ind-card{
+        width: 70%;
+    }
+
+    .filters{
+        margin-left: 10% !important;
+    }
 }

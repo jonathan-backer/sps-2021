@@ -7,7 +7,7 @@ const products = [
         phone: "8273615243",
         email: "email@us.com",
         category: "Hardware",
-        title: "Used Laptop",
+        title: "Laptop",
         location: "US",
         description:"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aspernatur soluta corrupti enim ex vitae perspiciatis?",
         img: "https://d22k5h68hofcrd.cloudfront.net/catalog/product/cache/b3b166914d87ce343d4dc5ec5117b502/2/9/29B19LA-1_T1601592802.png"
@@ -18,7 +18,7 @@ const products = [
         phone: "8273615243",
         email: "email@us.com",
         category: "Hardware",
-        title: "Samsung Smartphone",
+        title: "Smartphone",
         location: "Canada",
         description:"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aspernatur soluta corrupti enim ex vitae perspiciatis?",
         img:"https://images-na.ssl-images-amazon.com/images/I/61A3UNuWO9L._AC_SX522_.jpg"
@@ -29,7 +29,7 @@ const products = [
         phone: "8273615243",
         email: "email@us.com",
         category: "Internet Access",
-        title: "Wi-Fi hotspot",
+        title: "Wi-Fi",
         location: "Canada",
         description:"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aspernatur soluta corrupti enim ex vitae perspiciatis?",
         img: "https://images.squarespace-cdn.com/content/v1/59d2e7962994ca6597e2795c/1528574147297-NXO6UXRJ7FZKYOM9TETK/ke17ZwdGBToddI8pDm48kD5yiJ5U3jLPlFVdjq-dNjtZw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZamWLI2zvYWH8K3-s_4yszcp2ryTI0HqTOaaUohrI8PIxQ2n7XrSl_mALNyhwiiaOAqEUpH3VqkizFKNqDcghl0/960px-Wireless-icon.png"
@@ -40,7 +40,7 @@ const products = [
         phone: "8273615243",
         email: "email@us.com",
         category: "Internet Access",
-        title: "Wi-fi zone",
+        title: "Wi-fi",
         location: "Mexico",
         description:"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aspernatur soluta corrupti enim ex vitae perspiciatis?",
         img: "https://images.squarespace-cdn.com/content/v1/59d2e7962994ca6597e2795c/1528574147297-NXO6UXRJ7FZKYOM9TETK/ke17ZwdGBToddI8pDm48kD5yiJ5U3jLPlFVdjq-dNjtZw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZamWLI2zvYWH8K3-s_4yszcp2ryTI0HqTOaaUohrI8PIxQ2n7XrSl_mALNyhwiiaOAqEUpH3VqkizFKNqDcghl0/960px-Wireless-icon.png"
@@ -51,7 +51,7 @@ const products = [
         phone: "8273615243",
         email: "email@us.com",
         category: "Hardware",
-        title: "Used Laptop",
+        title: "Laptop",
         location: "Mexico",
         description:"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aspernatur soluta corrupti enim ex vitae perspiciatis?",
         img:"https://www.sanborns.com.mx/imagenes-sanborns-ii/1200/195348275705.jpg"
@@ -105,7 +105,7 @@ products.forEach((result) => {
                                             <i class="fas fa-map-marker-alt"></i>
                                             <p class="location">${result.location}</p>
                                         </div>
-                                        <p>Posted by: ${result.name}</p>
+                                        <p>Requested by: ${result.name}</p>
                                     </div>
                                 </div>
                                 <div class="row">

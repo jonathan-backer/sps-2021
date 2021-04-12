@@ -14,6 +14,7 @@
 
 package com.google.sps.data;
 
+import com.google.cloud.datastore.Blob;
 import com.google.sps.data.*;
 
 public final class Offer {
