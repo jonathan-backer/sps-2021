@@ -32,14 +32,14 @@ import org.jsoup.safety.Whitelist;
 public class NewTaskServlet extends HttpServlet {
 
   @Override
-  public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
-    // Sanitize user input to remove HTML tags and JavaScript.
-    String title = Jsoup.clean(request.getParameter("title"), Whitelist.none());
-    long timestamp = System.currentTimeMillis();
+  public void doPost(final HttpServletRequest request, final HttpServletResponse response) throws IOException {
+        // Sanitize user input to remove HTML tags and JavaScript.
+        final String title = Jsoup.clean(request.getParameter("title"), Whitelist.none());
+        final long timestamp = System.currentTimeMillis();
 
-    Datastore datastore = DatastoreOptions.getDefaultInstance().getService();
-    KeyFactory keyFactory = datastore.newKeyFactory().setKind("Task");
-    FullEntity taskEntity =
+        final Datastore datastore = DatastoreOptions.getDefaultInstance().getService();
+        final KeyFactory keyFactory = datastore.newKeyFactory().setKind("Task");
+        final FullEntity taskEntity =
         Entity.newBuilder(keyFactory.newKey())
             .set("title", title)
             .set("timestamp", timestamp)
