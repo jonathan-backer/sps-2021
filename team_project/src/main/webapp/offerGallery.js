@@ -66,80 +66,86 @@ function recaptchaCallback() {
     $('.contact-details').removeClass('d-none');
 };
 fetch('/offer', {method: 'GET'}).then(response => response.json()).then(products => {
-//Gallery displays one card for each object in the array
-products.forEach((result) => {
-    //Adds card HTML with object's unique properties
-    const card = `<div class="ind-card card">
-                        <div class="card-img"><img src="${result.picture}" alt=""></div>
-                        <div class="card-body">
-                            <p class="card-title">${result.offering}</p>
-                            <hr>
-                            <div class="cont-icon">
-                                <i class="fas fa-map-marker-alt"></i>
-                                <p class="location">${result.location}</p>
-                            </div>
-                            <button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal${result.id}">View full details</button>
-                        </div> 
-                    </div>`;
+    //Gallery displays one card for each object in the array
+    products.forEach((result) => {
+        //Adds card HTML with object's unique properties
+        const card = `<div class="ind-card card">
+                            <div class="card-img"><img src="${result.picture}" alt=""></div>
+                            <div class="card-body">
+                                <p class="card-title">${result.offering}</p>
+                                <hr>
+                                <div class="cont-icon">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <p class="location">${result.location}</p>
+                                </div>
+                                <button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal${result.id}">View full details</button>
+                            </div> 
+                        </div>`;
 
-    const modal = ` <div class="modal fade " id="exampleModal${result.id}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog modal-dialog-centered">
-                            <div class="modal-content px-3">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Full details</h5>
-                                <button type="button" class="close " data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="modal-body">
-                                <div class="row modal-top">
-                                    <div class="col-6 ">
-                                        <div class="modal-img">
-                                            <img src="${result.picture}" alt="">
+        const modal = ` <div class="modal fade " id="exampleModal${result.id}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content px-3">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Full details</h5>
+                                    <button type="button" class="close " data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="row modal-top">
+                                        <div class="col-6 ">
+                                            <div class="modal-img">
+                                                <img src="${result.picture}" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="col-6 modal-basic-info">
+                                            <h4>${result.offering}</h4>
+                                            <div class="category-tag"><p>${result.category}</p></div>
+                                            <div class="cont-icon col-6">
+                                                <i class="fas fa-map-marker-alt"></i>
+                                                <p class="location">${result.location}</p>
+                                            </div>
+                                            <p>Posted by: ${result.firstName + " " + result.lastName}</p>
                                         </div>
                                     </div>
-                                    <div class="col-6 modal-basic-info">
-                                        <h4>${result.offering}</h4>
-                                        <div class="category-tag"><p>${result.category}</p></div>
-                                        <div class="cont-icon col-6">
-                                            <i class="fas fa-map-marker-alt"></i>
-                                            <p class="location">${result.location}</p>
+                                    <div class="row">
+                                        <div class="col-12 text-justify">
+                                            <p>${result.description}</p>
                                         </div>
-                                        <p>Posted by: ${result.firstName + " " + result.lastName}</p>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-12 captcha-cont mb-3">
+                                            <form class="captcha-form${result.id}" action="?" method="POST">
+                                                <p>Complete the CAPTCHA to see the contact details</p>
+                                                <div class="g-recaptcha" data-callback="recaptchaCallback" data-sitekey="6LcYS6AaAAAAAPmvDRPZsJKBO8dIwCPNrPkfumnf"></div>
+                                            </form>
+                                        </div>
+                                        <div class="contact-details col-6 d-none">
+                                            <div class="cont-icon">
+                                                <i class="fas fa-envelope-open-text"></i>
+                                                <p><a href="mailto:${result.email}">${result.email}</a></p>
+                                            </div>
+                                            <div class="cont-icon">
+                                                <i class="fas fa-phone"></i>
+                                                <p class="location">TODO</p>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="row">
-                                    <div class="col-12 text-justify">
-                                        <p>${result.description}</p>
-                                    </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal" >Close</button>
                                 </div>
-                                <div class="row">
-                                    <div class="col-12 captcha-cont mb-3">
-                                        <form class="captcha-form${result.id}" action="?" method="POST">
-                                            <p>Complete the CAPTCHA to see the contact details</p>
-                                            <div class="g-recaptcha" data-callback="recaptchaCallback" data-sitekey="6LcYS6AaAAAAAPmvDRPZsJKBO8dIwCPNrPkfumnf"></div>
-                                        </form>
-                                    </div>
-                                    <div class="contact-details col-6 d-none">
-                                        <div class="cont-icon">
-                                            <i class="fas fa-envelope-open-text"></i>
-                                            <p><a href="mailto:${result.email}">${result.email}</a></p>
-                                        </div>
-                                        <div class="cont-icon">
-                                            <i class="fas fa-phone"></i>
-                                            <p class="location">TODO</p>
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal" >Close</button>
-                            </div>
-                            </div>
-                        </div>
-                    </div>`
+                        </div>`
 
-    container.innerHTML += card;
-    container.innerHTML += modal;
-});
+        container.innerHTML += card;
+        container.innerHTML += modal;
+    });
+
+    // Load the recaptcha script after all recaptcha elements are created.
+    var recaptchaScript = document.createElement('script');
+    recaptchaScript.src = 'https://www.google.com/recaptcha/api.js';
+    recaptchaScript.defer = true;
+    document.body.appendChild(recaptchaScript);
 });
