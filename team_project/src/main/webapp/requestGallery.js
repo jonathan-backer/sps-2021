@@ -67,6 +67,7 @@ function recaptchaCallback() {
 };
 
 //Gallery displays one card for each object in the array
+fetch('/request', {method: 'GET'}).then(response => response.json()).then(products => {
 products.forEach((result) => {
     //Adds card HTML with object's unique properties
     const card = `<div class="ind-card card">
@@ -105,7 +106,7 @@ products.forEach((result) => {
                                             <i class="fas fa-map-marker-alt"></i>
                                             <p class="location">${result.location}</p>
                                         </div>
-                                        <p>Requested by: ${result.name}</p>
+                                        <p>Requested by: ${result.firstName + " " + result.lastName}</p>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -142,4 +143,4 @@ products.forEach((result) => {
     container.innerHTML += card;
     container.innerHTML += modal;
 });
-
+});
