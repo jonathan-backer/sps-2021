@@ -2,6 +2,7 @@
     font-size: 20px;
     font-family: 'Montserrat';
     font-weight: 500;
+    box-shadow:  1px 1px 5px 1px #ccc;
 }
 
 main{
@@ -12,10 +13,10 @@ main{
 }
 
 .main-content {
-    
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    padding-bottom: 50px;
 }
 
 .title-cont {
@@ -45,4 +46,16 @@ main{
 
 .submit-offer {
     width: 100%;
+}
+
+footer{
+    box-shadow:  5px 5px 5px 6px #ccc;
+    padding: 12px;
+    background: #ffffff;
+    text-align: center;
+    font-size: 14px;
+}
+
+footer p{
+    margin-bottom: 5px;
 }

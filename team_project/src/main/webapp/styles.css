@@ -2,7 +2,10 @@
     font-size: 20px;
     font-family: 'Montserrat';
     font-weight: 500;
+    box-shadow:  1px 1px 5px 1px #ccc;
 }
+
+
 
 main {
     font-size: 18px;
@@ -10,12 +13,21 @@ main {
     background: #fafafa;
 }
 
+
 .project-description {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-content: center;
     height: 80vh;
+}
+
+.project-description .description-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    text-align: center;
 }
 
 .description-title {
@@ -26,7 +38,9 @@ main {
 }
 
 .description-text{
-    color: #4d4d4d;
+    width: 70%;
+    font-size: 1.2rem;
+    color: #575757;
     margin-bottom: 30px;
     text-align: justify;
 }
@@ -105,13 +119,7 @@ span {
     animation-duration: 2s;
 }
 
-.project-description .description-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-}
+
 
 
 
@@ -148,14 +156,47 @@ span {
     animation: bounce 2s infinite;
 }
 
-
-
 .project-details {
-    height: 40vh;
+    margin-top: 50px;
+    padding-bottom: 50px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
+}
+
+.project-details h1{
+    font-family: 'Montserrat';
+    font-weight: bold;
+    background: linear-gradient(to right, #FC77AE 0%, #ff9085 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 30px;
+}
+
+.full-description{
+    font-size: 1.2rem;
+    color: #575757;
+    text-align: center;
+    font-size: 1.3vw;
+}
+
+.fact-img{
+    width: 80%;
+}
+
+footer{
+    box-shadow:  5px 5px 5px 6px #ccc;
+    padding: 12px;
+    background: #ffffff;
+    text-align: center;
+    font-size: 14px;
+}
+
+footer p{
+    margin-bottom: 5px;
 }
 
 @keyframes float {
