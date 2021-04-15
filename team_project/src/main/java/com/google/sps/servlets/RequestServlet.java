@@ -59,11 +59,12 @@ public class RequestServlet extends HttpServlet {
       String email = entity.getString("email");
       String requesting = entity.getString("requesting");
       String category = entity.getString("category");
+      System.out.println("FIXME " + category);
       String description = entity.getString("description");
-      String picture = entity.getString("picture");
+      String location = entity.getString("location");
       long timestamp = entity.getLong("timestamp");
 
-      Request request = new Request(
+      Request myRequest = new Request(
         id,
         firstName,
         lastName,
@@ -73,7 +74,7 @@ public class RequestServlet extends HttpServlet {
         description,
         location,
         timestamp);
-      requests.add(request);
+      requests.add(myRequest);
     }
 
     Gson gson = new Gson();
@@ -84,6 +85,7 @@ public class RequestServlet extends HttpServlet {
 
   @Override
   public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    System.out.println("FIXME doPost");
     // Sanitize user input to remove HTML tags and JavaScript.
     String firstName = Jsoup.clean(request.getParameter("firstName"), Whitelist.none());
     String lastName = Jsoup.clean(request.getParameter("lastName"), Whitelist.none());
@@ -91,12 +93,12 @@ public class RequestServlet extends HttpServlet {
     String requesting = Jsoup.clean(request.getParameter("requesting"), Whitelist.none());
     String category = Jsoup.clean(request.getParameter("category"), Whitelist.none());
     String description = Jsoup.clean(request.getParameter("description"), Whitelist.none());
-    String location = Jsoup.clean(request.getParameter("location"), Whitelist.none());
+    String location = "TODO";
     long timestamp = System.currentTimeMillis();
 
     Datastore datastore = DatastoreOptions.getDefaultInstance().getService();
     KeyFactory keyFactory = datastore.newKeyFactory().setKind("Request");
-    FullEntity request =
+    FullEntity myRequest =
         Entity.newBuilder(keyFactory.newKey())
             .set("firstName", firstName)
             .set("lastName", lastName)
@@ -107,8 +109,9 @@ public class RequestServlet extends HttpServlet {
             .set("location", location)
             .set("timestamp", timestamp)
             .build();
-    datastore.put(requestEntity);
+    datastore.put(myRequest);
 
     response.setStatus(201);
+    response.sendRedirect("/index.html");
   }
 }

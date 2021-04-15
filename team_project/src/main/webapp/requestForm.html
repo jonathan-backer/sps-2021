@@ -59,19 +59,19 @@
             <div class="row"><div class="title-cont col-12 mt-4 mt-md-5"> <h1 class="title">Make a <span>Request!</span> </h1></div></div>
             <div class="row">
                 <div class="offer-form col-12 col-md-6 mt-5 mt-md-0">
-                    <form action="">
-                        <input type="text" class="form-control mb-3" name="" id="" placeholder="Full name*">
-                        <input type="tel" class="form-control mb-3" name="" id="" placeholder="Phone Number*">
-                        <input type="email" class="form-control mb-3" name="" id="" placeholder="Email*">
-                        <input type="text" class="form-control mb-3" name="" id="" placeholder="What are you in need of?*">
-                        <select class="custom-select mb-3" aria-label="Default select example">
+                    <form method="POST" action="/request">
+                        <input type="text" name="firstName" class="form-control mb-3" placeholder="First name*">
+                        <input type="text" class="form-control mb-3" name="lastName" placeholder="Last name*">
+                        <input type="email" class="form-control mb-3" name="email" placeholder="Email*">
+                        <input type="text" class="form-control mb-3" name="requesting" placeholder="What are you in need of?*">
+                        <select name="category" class="custom-select mb-3" aria-label="Default select example">
                             <option selected>Category*</option>
-                            <option value="1">Hardware</option>
-                            <option value="2">Software</option>
-                            <option value="3">Internet Access</option>
-                          </select>
-                        <textarea class="form-control mb-3" name="" id="" cols="30" rows="5" placeholder="Wite a message"></textarea>
-                          <button class="btn btn-primary btn-lg submit-offer">Submit</button>
+                            <option value=HARDWARE>Hardware</option>
+                            <option value="SOFTWARE">Software</option>
+                            <option value="INTERNET_ACCESS">Internet Access</option>
+                        </select>
+                        <textarea class="form-control mb-3" name="description" cols="30" rows="5" placeholder="Write a message"></textarea>
+                        <button class="btn btn-primary btn-lg submit-offer">Submit</button>
                     </form>
                 </div>
                 <div class="offer-instructions col-12 col-md-6 mt-5 mt-md-0">

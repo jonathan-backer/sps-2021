@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package main.java.com.google.sps.data;
+package com.google.sps.data;
 
 import com.google.cloud.datastore.Blob;
 import com.google.sps.data.*;
@@ -37,8 +37,6 @@ public final class Request {
     String requesting,
     Category category,
     String description,
-    String picture,
-    Condition condition,
     String location,
     long timestamp
     ) {
@@ -46,7 +44,7 @@ public final class Request {
     this.firstName = firstName;
     this.lastName = lastName;
     this.email = email;
-    this.request = requesting;
+    this.requesting= requesting;
     this.category = category;
     this.description = description;
     this.location = location;
