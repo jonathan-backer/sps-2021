@@ -58,11 +58,11 @@ public class OfferServlet extends HttpServlet {
       String lastName = entity.getString("lastName");
       String email = entity.getString("email");
       String offering = entity.getString("offering");
-      String category = "Hardware"; //entity.getString("category");
-      String description = ""; //entity.getString("description");
-      String picture = ""; //entity.getString("picture");
-      String condition = "New"; //entity.getString("condition");
-      String location = ""; //entity.getString("location");
+      String category = entity.getString("category");
+      String description = entity.getString("description");
+      String picture = entity.getString("picture");
+      String condition = entity.getString("condition");
+      String location = entity.getString("location");
       long timestamp = entity.getLong("timestamp");
 
       Offer offer = new Offer(
@@ -71,10 +71,10 @@ public class OfferServlet extends HttpServlet {
         lastName,
         email,
         offering,
-        Category.HARDWARE,
+        Category.valueOf(category),
         description,
         picture,
-        Condition.NEW,
+        Condition.valueOf(condition),
         location,
         timestamp);
       offers.add(offer);
@@ -93,11 +93,11 @@ public class OfferServlet extends HttpServlet {
     String lastName = Jsoup.clean(request.getParameter("lastName"), Whitelist.none());
     String email = Jsoup.clean(request.getParameter("email"), Whitelist.none());
     String offering = Jsoup.clean(request.getParameter("offering"), Whitelist.none());
-    String category = ""; //Jsoup.clean(request.getParameter("category"), Whitelist.none());
-    String description = ""; //Jsoup.clean(request.getParameter("description"), Whitelist.none());
-    String picture = ""; //Jsoup.clean(request.getParameter("picture"), Whitelist.none());
-    String condition = ""; //Jsoup.clean(request.getParameter("condition"), Whitelist.none());
-    String location = ""; //Jsoup.clean(request.getParameter("location"), Whitelist.none());
+    String category = Jsoup.clean(request.getParameter("category"), Whitelist.none());
+    String description = Jsoup.clean(request.getParameter("description"), Whitelist.none());
+    String picture = Jsoup.clean(request.getParameter("picture"), Whitelist.none());
+    String condition = Jsoup.clean(request.getParameter("condition"), Whitelist.none());
+    String location = "TODO";
     long timestamp = System.currentTimeMillis();
 
     Datastore datastore = DatastoreOptions.getDefaultInstance().getService();

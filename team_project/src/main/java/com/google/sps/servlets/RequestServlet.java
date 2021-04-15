@@ -59,7 +59,6 @@ public class RequestServlet extends HttpServlet {
       String email = entity.getString("email");
       String requesting = entity.getString("requesting");
       String category = entity.getString("category");
-      System.out.println("FIXME " + category);
       String description = entity.getString("description");
       String location = entity.getString("location");
       long timestamp = entity.getLong("timestamp");
@@ -85,7 +84,6 @@ public class RequestServlet extends HttpServlet {
 
   @Override
   public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
-    System.out.println("FIXME doPost");
     // Sanitize user input to remove HTML tags and JavaScript.
     String firstName = Jsoup.clean(request.getParameter("firstName"), Whitelist.none());
     String lastName = Jsoup.clean(request.getParameter("lastName"), Whitelist.none());
