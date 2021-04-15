@@ -70,9 +70,9 @@ fetch('/offer', {method: 'GET'}).then(response => response.json()).then(products
 products.forEach((result) => {
     //Adds card HTML with object's unique properties
     const card = `<div class="ind-card card">
-                        <div class="card-img"><img src="${result.img}" alt=""></div>
+                        <div class="card-img"><img src="${result.picture}" alt=""></div>
                         <div class="card-body">
-                            <p class="card-title">${result.title}</p>
+                            <p class="card-title">${result.offering}</p>
                             <hr>
                             <div class="cont-icon">
                                 <i class="fas fa-map-marker-alt"></i>
@@ -95,11 +95,11 @@ products.forEach((result) => {
                                 <div class="row modal-top">
                                     <div class="col-6 ">
                                         <div class="modal-img">
-                                            <img src="${result.img}" alt="">
+                                            <img src="${result.picture}" alt="">
                                         </div>
                                     </div>
                                     <div class="col-6 modal-basic-info">
-                                        <h4>${result.title}</h4>
+                                        <h4>${result.offering}</h4>
                                         <div class="category-tag"><p>${result.category}</p></div>
                                         <div class="cont-icon col-6">
                                             <i class="fas fa-map-marker-alt"></i>
@@ -127,7 +127,7 @@ products.forEach((result) => {
                                         </div>
                                         <div class="cont-icon">
                                             <i class="fas fa-phone"></i>
-                                            <p class="location">${result.phone}</p>
+                                            <p class="location">TODO</p>
                                         </div>
                                     </div>
                                 </div>
@@ -143,4 +143,3 @@ products.forEach((result) => {
     container.innerHTML += modal;
 });
 });
-

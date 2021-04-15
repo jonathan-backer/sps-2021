@@ -68,12 +68,18 @@
                         <input type="text" name="offering" class="form-control mb-3" placeholder="What do you have to offer?*">
                         <select name = "category" class="custom-select mb-3" aria-label="Default select example">
                             <option selected>Category*</option>
-                            <option value="Hardware">Hardware</option>
-                            <option value="Software">Software</option>
-                            <option value="Internet Access">Internet Access</option>
-                          </select>
-                        <input type="url" class="form-control mb-3" placeholder="Sample image (URL)">
-                        <textarea class="form-control mb-3" name="" id="" cols="30" rows="5" placeholder="Description"></textarea>
+                            <option value="HARDWARE">Hardware</option>
+                            <option value="SOFTWARE">Software</option>
+                            <option value="INTERNET_ACCESS">Internet Access</option>
+                        </select>
+                        <select name = "condition" class="custom-select mb-3" aria-label="Default select example">
+                            <option selected>Condition*</option>
+                            <option value="NA">Not applicable</option>
+                            <option value="NEW">New</option>
+                            <option value="USED">Used</option>
+                        </select>
+                        <input type="url" name="picture" class="form-control mb-3" placeholder="Sample image (URL)">
+                        <textarea class="form-control mb-3" name="description" cols="30" rows="5" placeholder="Description"></textarea>
                         <button class="btn btn-primary btn-lg submit-offer">Submit</button>
                     </form>
                 </div>
